@@ -3,7 +3,7 @@
  - This is my **mini-project** just only to experiement and observe how the famous **Collatz Conjecture** form in a chart.
  - Using Google Colab, I am able to achieve my goal by plotting the conjecture (in the range of 2^16) in a chart using pandas and altair framework.
  - By defining a function "collatz" with the parameter "number" :
-```
+```python3
 #define collatz function with number
 def collatz(number):
   is_valid = False
