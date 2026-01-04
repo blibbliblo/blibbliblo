@@ -24,7 +24,7 @@ def collatz(number):
 ```
 
  - After the values require to be plotted are created, I made three lists:
-```
+```python3
 import altair as alt
 import pandas as pd
 
@@ -36,7 +36,7 @@ is_valid_values = []
  To store these values which will later be plotted
 
  - Later we evaluate the values and put it in their corresponding lists:
-```
+```python3
 #only 2**16 because 32 and 64 takes 7 hours to show output
 for i in range(1, 2**16): #take data of the re-evaluation of collatz and append it in the coresponding list
   initial, is_valid, step_count = collatz(i)
@@ -45,7 +45,7 @@ for i in range(1, 2**16): #take data of the re-evaluation of collatz and append 
   is_valid_values.append(is_valid)
 ```
  - After that a dataset is made to store the value which we will put in the chart
-```
+```python3
 #put the list as data
 data = pd.DataFrame({
     "initial_x": initial_values,
@@ -56,7 +56,7 @@ data = pd.DataFrame({
  - An interactive chart is made using the data acquired:
  - X is the initial value before the application of Collatz
  - While Y is the steps required for the value to reach the final point: 1
-```
+```python3
 #put the data in the chart
 chart = alt.Chart(data).mark_circle().encode(
     x='initial_x',
@@ -68,9 +68,9 @@ chart = alt.Chart(data).mark_circle().encode(
 chart
 ```
  - After that the max and min value can be acquire using:
-```
+```python3
 data.min()
 ```
-```
+```python3
 data.max()
 ```
